@@ -16,6 +16,7 @@
     "eslint",
     "eslintconfig"
   ],
+  "type": "module",
   "dependencies": {
     "@typescript-eslint/parser": "^6.21.0"
   },
