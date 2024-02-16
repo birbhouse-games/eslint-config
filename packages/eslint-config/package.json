@@ -1,6 +1,6 @@
 {
   "name": "@trezy-studios/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Trezy",
     "email": "t@trezy.com",
@@ -16,7 +16,6 @@
     "eslint",
     "eslintconfig"
   ],
-  "type": "module",
   "dependencies": {
     "@typescript-eslint/parser": "^6.21.0"
   },
