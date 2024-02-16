@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/eslint-config",
+    "packages/eslint-config-electron",
+    "packages/eslint-config-react"
+  ],
+  "packageManager": "yarn@4.1.0"
+}

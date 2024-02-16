@@ -1,0 +1,35 @@
+{
+  "name": "@trezy-studios/eslint-config",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trezy",
+    "email": "t@trezy.com",
+    "url": "http://trezy.codes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trezy-studios/eslint-config.git"
+  },
+  "main": "index.js",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "type": "module",
+  "dependencies": {
+    "@typescript-eslint/parser": "^6.21.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint": ">=8.56.0",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^46.10.1",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-sort-class-members": "^1.19.0",
+    "eslint-plugin-unused-imports": "^3.1.0"
+  }
+}

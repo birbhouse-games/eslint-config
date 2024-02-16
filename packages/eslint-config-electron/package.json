@@ -1,0 +1,24 @@
+{
+  "name": "@trezy-studios/eslint-config-electron",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trezy",
+    "email": "t@trezy.com",
+    "url": "http://trezy.codes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trezy-studios/eslint-config.git"
+  },
+  "main": "index.js",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "type": "module",
+  "peerDependencies": {
+    "eslint": ">=8.56.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
+}
