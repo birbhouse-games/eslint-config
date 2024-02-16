@@ -17,7 +17,6 @@
     "eslint",
     "eslintconfig"
   ],
-  "type": "module",
   "peerDependencies": {
     "eslint": ">=8.56.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
