@@ -1,6 +1,6 @@
 {
   "name": "@trezy-studios/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "author": {
     "name": "Trezy",
     "email": "t@trezy.com",
@@ -17,18 +17,18 @@
     "eslintconfig"
   ],
   "dependencies": {
-    "@typescript-eslint/parser": "^6.21.0"
+    "@typescript-eslint/parser": "^7.0.1"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
     "eslint": ">=8.56.0",
     "eslint-plugin-editorconfig": "^4.0.3",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^46.10.1",
+    "eslint-plugin-jsdoc": "^48.1.0",
     "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-security": "^1.7.1",
-    "eslint-plugin-sort-class-members": "^1.19.0",
+    "eslint-plugin-security": "^2.1.1",
+    "eslint-plugin-sort-class-members": "^1.20.0",
     "eslint-plugin-unused-imports": "^3.1.0"
   }
 }
