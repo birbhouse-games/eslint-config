@@ -8,78 +8,21 @@ on:
 jobs:
   release-config:
     name: Release @trezy-studios/eslint-config
-    runs-on: ubuntu-latest
-    concurrency: release
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Semantic Release
-        run: yarn workspace @trezy-studios/eslint-config run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: ./.github/workflows/release-base.yml
+    with:
+      packageName: '@trezy-studios/eslint-config'
+    secrets: inherit
 
   release-config-electron:
     name: Release @trezy-studios/eslint-config-electron
-    runs-on: ubuntu-latest
-    concurrency: release
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Semantic Release
-        run: yarn workspace @trezy-studios/eslint-config-electron run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: ./.github/workflows/release-base.yml
+    with:
+      packageName: '@trezy-studios/eslint-config-electron'
+    secrets: inherit
 
   release-config-react:
     name: Release @trezy-studios/eslint-config-react
-    runs-on: ubuntu-latest
-    concurrency: release
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
-
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Semantic Release
-        run: yarn workspace @trezy-studios/eslint-config-react run semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    uses: ./.github/workflows/release-base.yml
+    with:
+      packageName: '@trezy-studios/eslint-config-react'
+    secrets: inherit

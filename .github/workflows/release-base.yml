@@ -1,0 +1,37 @@
+on:
+  workflow_call:
+    inputs:
+      packageName:
+        required: true
+        type: string
+    secrets:
+      githubToken:
+        required: true
+      npmToken:
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Semantic Release
+        run: yarn workspace ${{ inputs.packageName }} run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
+          NPM_TOKEN: ${{ secrets.npmToken }}
