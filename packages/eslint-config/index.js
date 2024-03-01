@@ -16,7 +16,7 @@ module.exports = {
 		'plugin:jsdoc/recommended',
 		'plugin:optimize-regex/recommended',
 		'plugin:promise/recommended',
-		'plugin:security/recommended',
+		'plugin:security/recommended-legacy',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
