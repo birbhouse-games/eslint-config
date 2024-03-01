@@ -1,6 +1,6 @@
 {
   "name": "@trezy-studios/eslint-config-react",
-  "version": "1.0.5",
+  "version": "0.0.0-development",
   "author": {
     "name": "Trezy",
     "email": "t@trezy.com",
@@ -18,6 +18,10 @@
     "eslint",
     "eslintconfig"
   ],
+  "devDependencies": {
+    "semantic-release": "^23.0.2",
+    "semantic-release-monorepo": "^8.0.2"
+  },
   "peerDependencies": {
     "eslint": ">=8.56.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",

@@ -1,6 +1,6 @@
 {
   "name": "@trezy-studios/eslint-config-electron",
-  "version": "1.0.4",
+  "version": "0.0.0-development",
   "author": {
     "name": "Trezy",
     "email": "t@trezy.com",
@@ -17,6 +17,10 @@
     "eslint",
     "eslintconfig"
   ],
+  "devDependencies": {
+    "semantic-release": "^23.0.2",
+    "semantic-release-monorepo": "^8.0.2"
+  },
   "peerDependencies": {
     "eslint": ">=8.56.0",
     "eslint-plugin-import": "^2.29.1"

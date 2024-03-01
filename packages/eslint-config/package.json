@@ -1,6 +1,6 @@
 {
   "name": "@trezy-studios/eslint-config",
-  "version": "1.0.5",
+  "version": "0.0.0-development",
   "author": {
     "name": "Trezy",
     "email": "t@trezy.com",
@@ -17,8 +17,15 @@
     "eslint",
     "eslintconfig"
   ],
+  "scripts": {
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
+  },
   "dependencies": {
     "@typescript-eslint/parser": "^7.0.1"
+  },
+  "devDependencies": {
+    "semantic-release": "^23.0.2",
+    "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.1",
