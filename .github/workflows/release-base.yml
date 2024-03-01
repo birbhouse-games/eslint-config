@@ -4,11 +4,6 @@ on:
       packageName:
         required: true
         type: string
-    secrets:
-      githubToken:
-        required: true
-      npmToken:
-        required: true
 
 jobs:
   release:
@@ -33,5 +28,5 @@ jobs:
       - name: Semantic Release
         run: yarn workspace ${{ inputs.packageName }} run semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.githubToken }}
-          NPM_TOKEN: ${{ secrets.npmToken }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
