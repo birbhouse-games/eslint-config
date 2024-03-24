@@ -71,7 +71,9 @@ module.exports = {
 		'react/no-typos': ['error'],
 		'react/no-unused-prop-types': ['error'],
 		'react/prefer-stateless-function': ['error'],
-		'react/require-default-props': ['error'],
+		'react/require-default-props': ['error', {
+			functions: 'defaultArguments',
+		}],
 		'react/self-closing-comp': ['error'],
 		'react/sort-prop-types': ['error'],
 		'react/style-prop-object': ['error'],
