@@ -160,6 +160,7 @@ module.exports = {
 		'jsdoc/no-types': ['off'],
 		'jsdoc/no-undefined-types': ['error', {
 			definedTypes: [
+				'RequestInit',
 				'ResizeObserverCallback',
 				'ResizeObserverOptions',
 			],
