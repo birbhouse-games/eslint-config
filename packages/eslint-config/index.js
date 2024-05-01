@@ -13,7 +13,7 @@ module.exports = {
 		'plugin:editorconfig/all',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
-		'plugin:jsdoc/recommended',
+		'plugin:jsdoc/recommended-typescript',
 		'plugin:optimize-regex/recommended',
 		'plugin:promise/recommended',
 		'plugin:security/recommended-legacy',
@@ -157,6 +157,7 @@ module.exports = {
 				'xstate-layout',
 			],
 		}],
+		'jsdoc/no-types': ['off'],
 		'jsdoc/no-undefined-types': ['error', {
 			definedTypes: [
 				'ResizeObserverCallback',
