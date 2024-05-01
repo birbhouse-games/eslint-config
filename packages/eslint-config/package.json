@@ -24,7 +24,7 @@
     "@typescript-eslint/parser": "^7.8.0"
   },
   "devDependencies": {
-    "semantic-release": "^23.0.2",
+    "semantic-release": "^23.0.8",
     "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
