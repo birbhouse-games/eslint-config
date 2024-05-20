@@ -21,15 +21,18 @@
   "scripts": {
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
+  "dependencies": {
+    "eslint": "^9.3.0"
+  },
   "devDependencies": {
+    "@types/eslint": "^8.56.10",
     "semantic-release": "^23.0.8",
     "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
-    "eslint": ">=8.56.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-perf": "^3.3.2",
     "eslint-plugin-react-prefer-function-component": "^3.3.0"
   }
