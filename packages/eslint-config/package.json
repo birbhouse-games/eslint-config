@@ -21,7 +21,7 @@
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "@typescript-eslint/parser": "^7.10.0",
+    "@typescript-eslint/parser": "^8.0.0-alpha.14",
     "eslint": "^9.3.0"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.14",
     "eslint-plugin-editorconfig": "^4.0.3",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.5",
