@@ -1,13 +1,12 @@
 /* eslint-env node */
+import globals from 'globals'
 
-/** @type {import('eslint').ESLint.ConfigData[]} */
+
+
+
+
 export default [
 	{
-		env: {
-			browser: true,
-			es2022: true,
-			node: true,
-		},
 		extends: [
 			'plugin:jsx-a11y/recommended',
 			'plugin:react/recommended',
@@ -16,6 +15,13 @@ export default [
 			'plugin:react-perf/recommended',
 			'plugin:react-prefer-function-component/recommended',
 		],
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.es2021,
+				...globals.node,
+			},
+		},
 		parserOptions: {
 			ecmaFeatures: {
 				jsx: true,

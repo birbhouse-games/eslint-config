@@ -1,13 +1,12 @@
 /* eslint-env node */
+import globals from 'globals'
 
-/** @type {import('eslint').ESLint.ConfigData[]} */
+
+
+
+
 export default [
 	{
-		env: {
-			browser: true,
-			es2022: true,
-			node: true,
-		},
 		extends: [
 			'eslint:recommended',
 			'plugin:@typescript-eslint/recommended',
@@ -20,6 +19,13 @@ export default [
 			'plugin:promise/recommended',
 			'plugin:security/recommended',
 		],
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.es2021,
+				...globals.node,
+			},
+		},
 		parser: '@typescript-eslint/parser',
 		parserOptions: {
 			sourceType: 'module',
