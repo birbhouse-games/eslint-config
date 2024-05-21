@@ -1,24 +1,49 @@
 /* eslint-env node */
+import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
+import js from '@eslint/js'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+
+
+
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const compat = new FlatCompat({
+	allConfig: js.configs.all,
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+})
 
 
 
 
 
 export default [
+	...compat.extends(
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:@typescript-eslint/eslint-recommended',
+		'plugin:editorconfig/all',
+		'plugin:import/recommended',
+		'plugin:import/typescript',
+		'plugin:jsdoc/recommended-typescript',
+		'plugin:optimize-regex/recommended',
+		'plugin:promise/recommended',
+		'plugin:security/recommended',
+	),
+	...compat.plugins(
+		'editorconfig',
+		'jsdoc',
+		'security',
+		'sort-class-members',
+		'unused-imports',
+		'@typescript-eslint',
+	),
+
 	{
-		extends: [
-			'eslint:recommended',
-			'plugin:@typescript-eslint/recommended',
-			'plugin:@typescript-eslint/eslint-recommended',
-			'plugin:editorconfig/all',
-			'plugin:import/recommended',
-			'plugin:import/typescript',
-			'plugin:jsdoc/recommended-typescript',
-			'plugin:optimize-regex/recommended',
-			'plugin:promise/recommended',
-			'plugin:security/recommended',
-		],
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -30,18 +55,10 @@ export default [
 		parserOptions: {
 			sourceType: 'module',
 		},
-		plugins: [
-			'editorconfig',
-			'jsdoc',
-			'security',
-			'sort-class-members',
-			'unused-imports',
-			'@typescript-eslint',
-		],
 		rules: {
 			// eslint
-			'array-callback-return': ['error'],
 			'array-bracket-spacing': ['error', 'never'],
+			'array-callback-return': ['error'],
 			'array-element-newline': ['error', 'consistent', {
 				minItems: 2,
 			}],
@@ -76,6 +93,7 @@ export default [
 				maxBOF: 0,
 				maxEOF: 1,
 			}],
+			'no-new-func': ['off'],
 			'no-plusplus': ['error'],
 			'no-proto': ['error'],
 			'no-promise-executor-return': ['error'],
@@ -151,7 +169,6 @@ export default [
 					'all',
 				],
 			}],
-			'no-new-func': ['off'],
 
 			// editorconfig
 			'editorconfig/indent': ['error', {

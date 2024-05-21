@@ -21,11 +21,25 @@
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.3.0",
     "@typescript-eslint/parser": "^8.0.0-alpha.14",
     "eslint": "^9.3.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.10",
+    "@types/eslint__eslintrc": "^2.1.1",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.14",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.5",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-security": "^3.0.0",
+    "eslint-plugin-sort-class-members": "^1.20.0",
+    "eslint-plugin-unused-imports": "^3.2.0",
     "semantic-release": "^23.0.8",
     "semantic-release-monorepo": "^8.0.2"
   },

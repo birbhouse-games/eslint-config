@@ -1,20 +1,41 @@
 /* eslint-env node */
+import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
+import js from '@eslint/js'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+
+
+
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const compat = new FlatCompat({
+	allConfig: js.configs.all,
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+})
 
 
 
 
 
 export default [
+	...compat.extends(
+		'plugin:jsx-a11y/recommended',
+		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
+		'plugin:react-hooks/recommended',
+		'plugin:react-perf/recommended',
+		'plugin:react-prefer-function-component/recommended',
+	),
+	...compat.plugins(
+		'react',
+		'react-prefer-function-component',
+	),
+
 	{
-		extends: [
-			'plugin:jsx-a11y/recommended',
-			'plugin:react/recommended',
-			'plugin:react/jsx-runtime',
-			'plugin:react-hooks/recommended',
-			'plugin:react-perf/recommended',
-			'plugin:react-prefer-function-component/recommended',
-		],
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -27,10 +48,6 @@ export default [
 				jsx: true,
 			},
 		},
-		plugins: [
-			'react',
-			'react-prefer-function-component',
-		],
 		rules: {
 			// react
 			'react/boolean-prop-naming': ['error'],
