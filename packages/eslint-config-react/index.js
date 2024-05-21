@@ -5,6 +5,9 @@ import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import configReactRecommended from 'eslint-plugin-react'
+import pluginReact from 'eslint-plugin-react'
+
 
 
 
@@ -24,27 +27,32 @@ const compat = new FlatCompat({
 export default [
 	...compat.extends(
 		'plugin:jsx-a11y/recommended',
-		'plugin:react/recommended',
-		'plugin:react/jsx-runtime',
 		'plugin:react-hooks/recommended',
 		'plugin:react-perf/recommended',
 		'plugin:react-prefer-function-component/recommended',
 	),
 	...compat.plugins(
-		'react',
 		'react-prefer-function-component',
 	),
 
+	configReactRecommended.configs.recommended,
+	configReactRecommended.configs['jsx-runtime'],
+
 	{
 		languageOptions: {
-			ecmaFeatures: {
-				jsx: true,
-			},
 			globals: {
 				...globals.browser,
 				...globals.es2021,
 				...globals.node,
 			},
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+			},
+		},
+		plugins: {
+			react: pluginReact,
 		},
 		rules: {
 			// react
