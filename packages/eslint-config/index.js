@@ -7,10 +7,10 @@ import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import parserTypescript from '@typescript-eslint/parser'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import pluginSecurity from 'eslint-plugin-security'
 import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
+import tsESlint from 'typescript-eslint'
 
 
 
@@ -27,11 +27,14 @@ const compat = new FlatCompat({
 
 
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
+
+export default tsESlint.config(
+	...tsESlint.configs.recommended,
+	pluginJSDoc.configs['flat/recommended-typescript'],
+	pluginSecurity.configs.recommended,
+	pluginSortClassMembers.configs['flat/recommended'],
+
 	...compat.extends(
-		'plugin:@typescript-eslint/eslint-recommended',
-		'plugin:@typescript-eslint/recommended',
 		'plugin:editorconfig/all',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
@@ -39,14 +42,9 @@ export default [
 		'plugin:promise/recommended',
 	),
 	...compat.plugins(
-		'@typescript-eslint',
 		'editorconfig',
 		'unused-imports',
 	),
-
-	pluginJSDoc.configs['flat/recommended-typescript'],
-	pluginSecurity.configs.recommended,
-	pluginSortClassMembers.configs['flat/recommended'],
 
 	{
 		languageOptions: {
@@ -58,11 +56,12 @@ export default [
 				...globals.es2021,
 				...globals.node,
 			},
-			parser: parserTypescript,
+			parser: tsESlint.parser,
 			sourceType: 'module',
 		},
 		plugins: {
 			jsdoc: pluginJSDoc,
+			'@typescript-eslint': tsESlint.plugin,
 		},
 		rules: {
 			// eslint
@@ -240,4 +239,4 @@ export default [
 			},
 		},
 	},
-]
+)

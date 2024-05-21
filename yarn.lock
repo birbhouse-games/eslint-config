@@ -849,8 +849,6 @@ __metadata:
     "@types/eslint__eslintrc": "npm:^2.1.1"
     "@types/eslint__js": "npm:^8.42.3"
     "@types/node": "npm:^20.12.12"
-    "@typescript-eslint/eslint-plugin": "npm:^8.0.0-alpha.14"
-    "@typescript-eslint/parser": "npm:^8.0.0-alpha.14"
     eslint: "npm:^9.3.0"
     eslint-plugin-editorconfig: "npm:^4.0.3"
     eslint-plugin-import: "npm:^2.29.1"
@@ -862,8 +860,8 @@ __metadata:
     eslint-plugin-unused-imports: "npm:^3.2.0"
     semantic-release: "npm:^23.0.8"
     semantic-release-monorepo: "npm:^8.0.2"
+    typescript-eslint: "npm:^8.0.0-alpha.14"
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^8.0.0-alpha.14
     eslint-import-resolver-typescript: ^3.6.1
     eslint-plugin-editorconfig: ^4.0.3
     eslint-plugin-import: ^2.29.1
@@ -967,7 +965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^8.0.0-alpha.14":
+"@typescript-eslint/eslint-plugin@npm:8.0.0-alpha.14":
   version: 8.0.0-alpha.14
   resolution: "@typescript-eslint/eslint-plugin@npm:8.0.0-alpha.14"
   dependencies:
@@ -990,7 +988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^8.0.0-alpha.14":
+"@typescript-eslint/parser@npm:8.0.0-alpha.14":
   version: 8.0.0-alpha.14
   resolution: "@typescript-eslint/parser@npm:8.0.0-alpha.14"
   dependencies:
@@ -6811,6 +6809,20 @@ __metadata:
     is-typed-array: "npm:^1.1.13"
     possible-typed-array-names: "npm:^1.0.0"
   checksum: 10c0/74253d7dc488eb28b6b2711cf31f5a9dcefc9c41b0681fd1c178ed0a1681b4468581a3626d39cd4df7aee3d3927ab62be06aa9ca74e5baf81827f61641445b77
+  languageName: node
+  linkType: hard
+
+"typescript-eslint@npm:^8.0.0-alpha.14":
+  version: 8.0.0-alpha.14
+  resolution: "typescript-eslint@npm:8.0.0-alpha.14"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": "npm:8.0.0-alpha.14"
+    "@typescript-eslint/parser": "npm:8.0.0-alpha.14"
+    "@typescript-eslint/utils": "npm:8.0.0-alpha.14"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/44bab4f63c1372469515e4d603192f236a14e7e3e7c1c6d079a363946dc7634996ef5bcde248371c320ef43d3b56e856e60822561aec8114dc55f964aa9b4a80
   languageName: node
   linkType: hard
 
