@@ -57,14 +57,10 @@ export default [
 				...globals.es2021,
 				...globals.node,
 			},
-		},
-		parser: '@typescript-eslint/parser',
-		parserOptions: {
+			parser: '@typescript-eslint/parser',
 			sourceType: 'module',
 		},
-		plugins: [
-			pluginJSDoc,
-		],
+		plugins: [pluginJSDoc],
 		rules: {
 			// eslint
 			'array-bracket-spacing': ['error', 'never'],
