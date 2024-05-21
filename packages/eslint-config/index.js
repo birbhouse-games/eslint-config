@@ -1,9 +1,15 @@
 /* eslint-env node */
+
+// Module imports
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
 import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+import pluginJSDoc from 'eslint-plugin-jsdoc'
+import pluginSecurity from 'eslint-plugin-security'
+import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
 
 
 
@@ -23,25 +29,23 @@ const compat = new FlatCompat({
 
 export default [
 	...compat.extends(
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/eslint-recommended',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:editorconfig/all',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
-		'plugin:jsdoc/recommended-typescript',
 		'plugin:optimize-regex/recommended',
 		'plugin:promise/recommended',
-		'plugin:security/recommended',
 	),
 	...compat.plugins(
-		'editorconfig',
-		'jsdoc',
-		'security',
-		'sort-class-members',
-		'unused-imports',
 		'@typescript-eslint',
+		'editorconfig',
+		'unused-imports',
 	),
+
+	pluginJSDoc.configs['flat/recommended-typescript'],
+	pluginSecurity.configs.recommended,
+	pluginSortClassMembers.configs['flat/recommended'],
 
 	{
 		languageOptions: {
@@ -55,6 +59,9 @@ export default [
 		parserOptions: {
 			sourceType: 'module',
 		},
+		plugins: [
+			pluginJSDoc,
+		],
 		rules: {
 			// eslint
 			'array-bracket-spacing': ['error', 'never'],
@@ -216,6 +223,18 @@ export default [
 		settings: {
 			jsdoc: {
 				mode: 'typescript',
+			},
+			'import/parsers': {
+				'@typescript-eslint/parser': [
+					'.js',
+					'.jsx',
+					'.ts',
+					'.tsx',
+				],
+			},
+			'import/resolver': {
+				node: true,
+				typescript: true,
 			},
 		},
 	},

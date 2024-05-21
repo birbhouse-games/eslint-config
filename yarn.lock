@@ -844,6 +844,7 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.1.0"
     "@eslint/js": "npm:^9.3.0"
     "@types/eslint": "npm:^8.56.10"
+    "@types/eslint-plugin-security": "npm:^3.0.0"
     "@types/eslint__eslintrc": "npm:^2.1.1"
     "@types/eslint__js": "npm:^8.42.3"
     "@types/node": "npm:^20.12.12"
@@ -862,6 +863,7 @@ __metadata:
     semantic-release-monorepo: "npm:^8.0.2"
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^8.0.0-alpha.14
+    eslint-import-resolver-typescript: ^3.6.1
     eslint-plugin-editorconfig: ^4.0.3
     eslint-plugin-import: ^2.29.1
     eslint-plugin-jsdoc: ^48.2.5
@@ -887,6 +889,15 @@ __metadata:
     "@tufjs/canonical-json": "npm:2.0.0"
     minimatch: "npm:^9.0.3"
   checksum: 10c0/252f525b05526077430920b30b125e197a3d711f4c6d1ceeee9cea5044035e4d94e57db481d96bd8e9d1ce5ee23fcc9fe989e7e0c9c2aec7e1edc27326ee16e6
+  languageName: node
+  linkType: hard
+
+"@types/eslint-plugin-security@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/eslint-plugin-security@npm:3.0.0"
+  dependencies:
+    "@types/eslint": "npm:*"
+  checksum: 10c0/70d9a8344d75ae447afa004847f8cea57ee78436572410b2c5f73fb6252e5024f777e4e749f17e1099428244510ae4e6c255677bb9d83612c22df28e3c2da391
   languageName: node
   linkType: hard
 
