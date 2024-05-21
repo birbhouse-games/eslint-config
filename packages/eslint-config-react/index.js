@@ -56,9 +56,6 @@ export default [
 				},
 			},
 		},
-		plugins: {
-			react: pluginReact,
-		},
 		rules: {
 			// react
 			'react/boolean-prop-naming': ['error'],
