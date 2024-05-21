@@ -6,8 +6,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import pluginReact from 'eslint-plugin-react'
-import configReactJSXRuntime from 'eslint-plugin-react/configs/jsx-runtime'
-import configReactRecommended from 'eslint-plugin-react/configs/recommended'
+import configReactJSXRuntime from 'eslint-plugin-react/configs/jsx-runtime.js'
+import configReactRecommended from 'eslint-plugin-react/configs/recommended.js'
 
 
 
