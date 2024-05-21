@@ -43,7 +43,10 @@ export default [
 	{
 		languageOptions: {
 			globals: {
-				...globals.browser,
+				...Object.entries(globals.browser).reduce((accumulator, [key, value]) => {
+					accumulator[key.trim()] = value
+					return accumulator
+				}, {}),
 				...globals.es2021,
 				...globals.node,
 			},
