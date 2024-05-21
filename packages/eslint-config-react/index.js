@@ -5,7 +5,6 @@ import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import configReactRecommended from 'eslint-plugin-react'
 import pluginReact from 'eslint-plugin-react'
 
 
@@ -35,8 +34,8 @@ export default [
 		'react-prefer-function-component',
 	),
 
-	configReactRecommended.configs.recommended,
-	configReactRecommended.configs['jsx-runtime'],
+	pluginReact.configs.recommended,
+	pluginReact.configs['jsx-runtime'],
 
 	{
 		languageOptions: {
