@@ -61,7 +61,9 @@ export default [
 			parser: parserTypescript,
 			sourceType: 'module',
 		},
-		plugins: [pluginJSDoc],
+		plugins: {
+			jsdoc: pluginJSDoc,
+		},
 		rules: {
 			// eslint
 			'array-bracket-spacing': ['error', 'never'],
