@@ -50,11 +50,6 @@ export default [
 				...globals.es2021,
 				...globals.node,
 			},
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
 		},
 		rules: {
 			// react
