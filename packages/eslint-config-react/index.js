@@ -23,6 +23,7 @@ const compat = new FlatCompat({
 
 
 
+/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
 	...compat.extends(
 		'plugin:jsx-a11y/recommended',
