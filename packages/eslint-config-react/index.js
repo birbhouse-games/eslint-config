@@ -37,15 +37,13 @@ export default [
 
 	{
 		languageOptions: {
+			ecmaFeatures: {
+				jsx: true,
+			},
 			globals: {
 				...globals.browser,
 				...globals.es2021,
 				...globals.node,
-			},
-		},
-		parserOptions: {
-			ecmaFeatures: {
-				jsx: true,
 			},
 		},
 		rules: {
