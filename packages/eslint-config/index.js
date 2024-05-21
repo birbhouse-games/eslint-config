@@ -7,6 +7,7 @@ import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import parserTypescript from '@typescript-eslint/parser'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import pluginSecurity from 'eslint-plugin-security'
 import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
@@ -57,7 +58,7 @@ export default [
 				...globals.es2021,
 				...globals.node,
 			},
-			parser: '@typescript-eslint/parser',
+			parser: parserTypescript,
 			sourceType: 'module',
 		},
 		plugins: [pluginJSDoc],
