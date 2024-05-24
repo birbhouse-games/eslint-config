@@ -225,14 +225,6 @@ export default tsESlint.config(
 			jsdoc: {
 				mode: 'typescript',
 			},
-			'import/parsers': {
-				'@typescript-eslint/parser': [
-					'.js',
-					'.jsx',
-					'.ts',
-					'.tsx',
-				],
-			},
 			'import/resolver': {
 				node: true,
 				typescript: true,

@@ -863,7 +863,6 @@ __metadata:
     semantic-release-monorepo: "npm:^8.0.2"
     typescript-eslint: "npm:^8.0.0-alpha.14"
   peerDependencies:
-    eslint-import-resolver-typescript: ^3.6.1
     eslint-plugin-editorconfig: ^4.0.3
     eslint-plugin-import: ^2.29.1
     eslint-plugin-jsdoc: ^48.2.5
