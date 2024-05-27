@@ -870,7 +870,7 @@ __metadata:
     eslint-plugin-promise: ^6.1.1
     eslint-plugin-security: ^3.0.0
     eslint-plugin-sort-class-members: ^1.20.0
-    eslint-plugin-unused-imports: ^3.2.0
+    eslint-plugin-unused-imports: 4.0.0
   languageName: unknown
   linkType: soft
 
