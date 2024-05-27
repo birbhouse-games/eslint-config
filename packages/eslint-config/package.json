@@ -25,7 +25,7 @@
     "@eslint/js": "^9.3.0",
     "eslint": "^9.3.0",
     "globals": "^15.3.0",
-    "typescript-eslint": "^8.0.0-alpha.14"
+    "typescript-eslint": "^8.0.0-alpha.16"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.10",
@@ -40,7 +40,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-security": "^3.0.0",
     "eslint-plugin-sort-class-members": "^1.20.0",
-    "eslint-plugin-unused-imports": "^3.2.0",
+    "eslint-plugin-unused-imports": "^4.0.0",
     "semantic-release": "^23.0.8",
     "semantic-release-monorepo": "^8.0.2"
   },

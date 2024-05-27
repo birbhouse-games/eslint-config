@@ -41,6 +41,7 @@ export default tsESlint.config(
 		'plugin:optimize-regex/recommended',
 		'plugin:promise/recommended',
 	),
+
 	...compat.plugins(
 		'editorconfig',
 		'unused-imports',
