@@ -10,7 +10,6 @@ import { fileURLToPath } from 'node:url'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import pluginSecurity from 'eslint-plugin-security'
 import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
-import pluginUnusedImports from 'eslint-plugin-unused-imports'
 import tsESlint from 'typescript-eslint'
 
 
@@ -34,7 +33,6 @@ export default tsESlint.config(
 	pluginJSDoc.configs['flat/recommended-typescript'],
 	pluginSecurity.configs.recommended,
 	pluginSortClassMembers.configs['flat/recommended'],
-	pluginUnusedImports,
 
 	...compat.extends(
 		'plugin:editorconfig/all',
@@ -44,7 +42,10 @@ export default tsESlint.config(
 		'plugin:promise/recommended',
 	),
 
-	...compat.plugins('editorconfig'),
+	...compat.plugins(
+		'editorconfig',
+		'unused-imports',
+	),
 
 	{
 		languageOptions: {
