@@ -7,22 +7,22 @@ on:
 
 jobs:
   release-config:
-    name: Release @trezy-studios/eslint-config
+    name: Release @birbhouse/eslint-config
     uses: ./.github/workflows/release-base.yml
     with:
-      packageName: '@trezy-studios/eslint-config'
+      packageName: '@birbhouse/eslint-config'
     secrets: inherit
 
   release-config-electron:
-    name: Release @trezy-studios/eslint-config-electron
+    name: Release @birbhouse/eslint-config-electron
     uses: ./.github/workflows/release-base.yml
     with:
-      packageName: '@trezy-studios/eslint-config-electron'
+      packageName: '@birbhouse/eslint-config-electron'
     secrets: inherit
 
   release-config-react:
-    name: Release @trezy-studios/eslint-config-react
+    name: Release @birbhouse/eslint-config-react
     uses: ./.github/workflows/release-base.yml
     with:
-      packageName: '@trezy-studios/eslint-config-react'
+      packageName: '@birbhouse/eslint-config-react'
     secrets: inherit

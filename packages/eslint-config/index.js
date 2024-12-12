@@ -7,7 +7,9 @@ import js from '@eslint/js'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import pluginImport from 'eslint-plugin-import'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
+import pluginPromise from 'eslint-plugin-promise'
 import pluginSecurity from 'eslint-plugin-security'
 import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
 import tsESlint from 'typescript-eslint'
@@ -33,13 +35,14 @@ export default tsESlint.config(
 	pluginJSDoc.configs['flat/recommended-typescript'],
 	pluginSecurity.configs.recommended,
 	pluginSortClassMembers.configs['flat/recommended'],
+	pluginImport.flatConfigs.recommended,
+	pluginImport.flatConfigs.react,
+	pluginImport.flatConfigs.typescript,
+	pluginPromise.configs['flat/recommended'],
 
 	...compat.extends(
 		'plugin:editorconfig/all',
-		'plugin:import/recommended',
-		'plugin:import/typescript',
 		'plugin:optimize-regex/recommended',
-		'plugin:promise/recommended',
 	),
 
 	...compat.plugins(

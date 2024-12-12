@@ -1,5 +1,5 @@
-# Trezy Studios' ESLint Configs
+# Birbhouse's ESLint Configs
 
-* [`@trezy-studios/eslint-config`](packages/eslint-config)
-* [`@trezy-studios/eslint-config-electron`](packages/eslint-config-electron)
-* [`@trezy-studios/eslint-config-react`](packages/eslint-config-react)
+* [`@birbhouse/eslint-config`](packages/eslint-config)
+* [`@birbhouse/eslint-config-electron`](packages/eslint-config-electron)
+* [`@birbhouse/eslint-config-react`](packages/eslint-config-react)
