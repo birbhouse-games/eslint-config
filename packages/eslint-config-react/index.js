@@ -1,58 +1,58 @@
 /* eslint-env node */
+
+// Module imports
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
-import js from '@eslint/js'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
+import * as pluginImport from 'eslint-plugin-import'
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
+import pluginPreferFC from 'eslint-plugin-react-prefer-function-component/config'
 import pluginReact from 'eslint-plugin-react'
-import configReactJSXRuntime from 'eslint-plugin-react/configs/jsx-runtime.js'
-import configReactRecommended from 'eslint-plugin-react/configs/recommended.js'
+import pluginReactPerf from 'eslint-plugin-react-perf'
 
 
 
 
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-	allConfig: js.configs.all,
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-})
+
+// Constants
+const compat = new FlatCompat()
 
 
 
 
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
-	...compat.extends(
-		'plugin:jsx-a11y/recommended',
-		'plugin:react-hooks/recommended',
-		'plugin:react-perf/recommended',
-		'plugin:react-prefer-function-component/recommended',
-	),
-	...compat.plugins(
-		'react-prefer-function-component',
-	),
 
-	configReactRecommended,
-	configReactJSXRuntime,
+export const react = [
+	pluginImport.flatConfigs?.react,
+	pluginJsxA11y.flatConfigs.recommended,
+	pluginPreferFC.configs?.recommended,
+	pluginReact.configs.flat?.recommended,
+	pluginReact.configs.flat?.['jsx-runtime'],
+	pluginReactPerf.configs.flat.recommended,
+
+	...compat.extends('plugin:react-hooks/recommended'),
 
 	{
-		languageOptions: {
-			globals: {
-				...Object.entries(globals.browser).reduce((accumulator, [key, value]) => {
-					accumulator[key.trim()] = value
-					return accumulator
-				}, {}),
-				...globals.es2021,
-				...globals.node,
+    languageOptions: {
+			...pluginJsxA11y.flatConfigs.recommended.languageOptions,
+			...pluginReact.configs.flat?.recommended.languageOptions,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: globals.browser,
+    },
+		settings: {
+			react: {
+				version: 'detect',
 			},
 		},
+	},
+
+	// eslint-plugin-react
+	{
 		rules: {
-			// react
 			'react/boolean-prop-naming': ['error'],
 			'react/default-props-match-prop-types': ['error'],
 			'react/destructuring-assignment': ['error'],
@@ -71,7 +71,12 @@ export default [
 			'react/jsx-boolean-value': ['error'],
 			'react/jsx-closing-bracket-location': ['error', 'after-props'],
 			'react/jsx-curly-brace-presence': ['error', 'always'],
-			'react/jsx-filename-extension': ['error'],
+			'react/jsx-filename-extension': ['error', {
+				extensions: [
+					'.jsx',
+					'.tsx',
+				],
+			}],
 			'react/jsx-first-prop-new-line': ['error', 'multiline'],
 			'react/jsx-handler-names': ['error'],
 			'react/jsx-indent': ['error', 'tab'],
@@ -106,16 +111,15 @@ export default [
 			'react/sort-prop-types': ['error'],
 			'react/style-prop-object': ['error'],
 			'react/void-dom-elements-no-children': ['error'],
-
-			// react-prefer-function-component
-			'react-prefer-function-component/react-prefer-function-component': ['error', {
-				allowComponentDidCatch: false,
-			}],
-		},
-		settings: {
-			react: {
-				version: 'detect',
-			},
 		},
 	},
+
+	// // eslint-plugin-react-prefer-function-component
+	// {
+	// 	rules: {
+	// 		'react-prefer-function-component/react-prefer-function-component': ['error', {
+	// 			allowComponentDidCatch: false,
+	// 		}],
+	// 	},
+	// },
 ]

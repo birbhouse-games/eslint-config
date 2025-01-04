@@ -8,7 +8,7 @@
 npm install -D eslint @birbhouse/eslint-config-react
 
 # Install peer dependencies for this configuration
-npm install -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-perf eslint-plugin-react-prefer-function-component
+npm install -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-perf eslint-plugin-react-prefer-function-component
 ```
 
 ### Yarn
@@ -17,5 +17,5 @@ npm install -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-ho
 yarn add -D eslint @birbhouse/eslint-config-react
 
 # Install peer dependencies for this configuration
-yarn add -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-perf eslint-plugin-react-prefer-function-component
+yarn add -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-perf eslint-plugin-react-prefer-function-component
 ```

@@ -22,19 +22,26 @@
     "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
-    "eslint": "^9.16.0"
+    "eslint": "^9.17.0",
+    "typescript-eslint": "^8.19.0"
   },
   "devDependencies": {
-    "@types/eslint": "^9.6.1",
-    "eslint-plugin-react": "^7.37.2",
-    "semantic-release": "^24.2.0",
+    "@types/eslint": "^9",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-perf": "^3.3.3",
+    "eslint-plugin-react-prefer-function-component": "^3.3.0",
+    "semantic-release": "^24.2.1",
     "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.34.1",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-perf": "^3.3.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-perf": "^3.3.3",
     "eslint-plugin-react-prefer-function-component": "^3.3.0"
   }
 }
