@@ -9,7 +9,7 @@ import tseslint from 'typescript-eslint'
 
 
 
-export const typescript = [
+export default [
 	...tseslint.configs.recommended,
 	pluginJSDoc.configs['flat/recommended-typescript'],
 	pluginImport.flatConfigs?.typescript,
