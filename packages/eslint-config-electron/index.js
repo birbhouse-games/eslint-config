@@ -1,29 +1,22 @@
 /* eslint-env node */
+
+// Module imports
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
-import js from '@eslint/js'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import * as pluginImport from 'eslint-plugin-import'
 
 
 
 
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-	allConfig: js.configs.all,
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-})
+const compat = new FlatCompat()
 
 
 
 
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-	...compat.extends('plugin:import/electron'),
+	pluginImport.flatConfigs?.electron,
 
 	{
 		languageOptions: {
@@ -33,6 +26,14 @@ export default [
 				...globals.node,
 				MAIN_WINDOW_VITE_DEV_SERVER_URL: 'readonly',
 				MAIN_WINDOW_VITE_NAME: 'readonly',
+			},
+		},
+		settings: {
+			'import/core-modules': [
+				'electron',
+			],
+			'import/resolver': {
+				typescript: true,
 			},
 		},
 	},
