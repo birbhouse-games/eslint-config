@@ -20,6 +20,7 @@ const compat = new FlatCompat()
 
 
 
+/** @type { import("eslint").Linter.Config[] } */
 export default [
 	eslint.configs.recommended,
 	pluginImportX.flatConfigs.recommended,
@@ -57,9 +58,9 @@ export default [
 		},
 	},
 
+	// eslint
 	{
 		rules: {
-			// eslint
 			'array-bracket-spacing': ['error', 'never'],
 			'array-callback-return': ['error'],
 			'array-element-newline': ['error', 'consistent', {
@@ -172,19 +173,21 @@ export default [
 					'all',
 				],
 			}],
+		},
+	},
 
-			// editorconfig
+	// eslint-plugin-editorconfig
+	{
+		rules: {
 			'editorconfig/indent': ['error', {
 				'SwitchCase': 1,
 			}],
+		},
+	},
 
-			// jsdoc
-			'jsdoc/check-tag-names': ['error', {
-				definedTags: [
-					'component',
-					'xstate-layout',
-				],
-			}],
+	// eslint-plugin-jsdoc
+	{
+		rules: {
 			'jsdoc/no-types': ['off'],
 			'jsdoc/no-undefined-types': ['error', {
 				definedTypes: [
@@ -206,14 +209,19 @@ export default [
 			'jsdoc/require-param': ['error', {
 				exemptedBy: ['component'],
 			}],
+			'jsdoc/require-param-type': ['off'],
 			'jsdoc/require-returns': ['error', {
 				exemptedBy: ['component'],
 			}],
 			'jsdoc/tag-lines': ['error', 'never', {
 				startLines: 1,
 			}],
+		},
+	},
 
-			// security
+	// eslint-plugin-security
+	{
+		rules: {
 			'security/detect-object-injection': ['off'],
 		},
 	},

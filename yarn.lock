@@ -53,9 +53,10 @@ __metadata:
   resolution: "@birbhouse/eslint-config-react@workspace:packages/eslint-config-react"
   dependencies:
     "@eslint/eslintrc": "npm:^3.2.0"
-    "@types/eslint": "npm:^9"
+    "@types/eslint": "npm:^9.6.1"
     eslint: "npm:^9.17.0"
     eslint-plugin-import-x: "npm:^4.6.1"
+    eslint-plugin-jsdoc: "npm:^50.6.1"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.3"
     eslint-plugin-react-hooks: "npm:^5.1.0"
@@ -66,6 +67,7 @@ __metadata:
     typescript-eslint: "npm:^8.19.0"
   peerDependencies:
     eslint-plugin-import-x: ^4.6.1
+    eslint-plugin-jsdoc: ^50.6.1
     eslint-plugin-jsx-a11y: ^6.10.2
     eslint-plugin-react: ^7.37.2
     eslint-plugin-react-hooks: ^5.1.0
@@ -1035,7 +1037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^9, @types/eslint@npm:^9.6.1":
+"@types/eslint@npm:^9.6.1":
   version: 9.6.1
   resolution: "@types/eslint@npm:9.6.1"
   dependencies:

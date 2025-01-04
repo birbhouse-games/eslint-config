@@ -22,6 +22,7 @@ const compat = new FlatCompat()
 
 
 
+/** @type { import("eslint").Linter.Config[] } */
 export default [
 	pluginImportX.flatConfigs.react,
 	pluginJsxA11y.flatConfigs.recommended,
@@ -55,7 +56,7 @@ export default [
 		rules: {
 			'react/boolean-prop-naming': ['error'],
 			'react/default-props-match-prop-types': ['error'],
-			'react/destructuring-assignment': ['error'],
+			'react/destructuring-assignment': ['off'],
 			'react/forbid-elements': ['error', {
 				forbid: [
 					{
@@ -85,7 +86,7 @@ export default [
 			'react/jsx-max-props-per-line': ['error'],
 			'react/jsx-no-script-url': ['error'],
 			'react/jsx-no-useless-fragment': ['error'],
-			'react/jsx-pascal-case': ['error'],
+			'react/jsx-pascal-case': ['off'],
 			'react/jsx-props-no-multi-spaces': ['error'],
 			'react/jsx-sort-props': ['error', {
 				reservedFirst: true,
@@ -102,15 +103,28 @@ export default [
 			'react/no-danger': ['error'],
 			'react/no-invalid-html-attribute': ['error'],
 			'react/no-typos': ['error'],
+			'react/no-unknown-property': ['off'],
 			'react/no-unused-prop-types': ['error'],
 			'react/prefer-stateless-function': ['error'],
-			'react/require-default-props': ['error', {
-				functions: 'defaultArguments',
-			}],
 			'react/self-closing-comp': ['error'],
 			'react/sort-prop-types': ['error'],
 			'react/style-prop-object': ['error'],
 			'react/void-dom-elements-no-children': ['error'],
+		},
+	},
+
+	// eslint-plugin-jsdoc
+	{
+		rules: {
+			'jsdoc/check-tag-names': ['error', {
+				definedTags: ['component'],
+			}],
+			'jsdoc/require-param': ['warn', {
+				contexts: [
+					'FunctionDeclaration:not([id.name=/^[A-Z].+/])',
+					'VariableDeclarator:not([id.name=/^[A-Z].+/]) > ArrowFunctionExpression'
+				]
+			}],
 		},
 	},
 

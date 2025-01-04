@@ -9,8 +9,8 @@ import tseslint from 'typescript-eslint'
 
 
 
-export default [
-	...tseslint.configs.recommended,
+export default tseslint.config(
+	tseslint.configs.recommended,
 	pluginImportX.flatConfigs.typescript,
 	pluginJSDoc.configs['flat/recommended-typescript'],
 
@@ -24,4 +24,12 @@ export default [
 			},
 		},
 	},
-]
+
+	{
+		rules: {
+			'@typescript-eslint/no-empty-object-type': ['error', {
+				allowInterfaces: 'with-single-extends',
+			}],
+		},
+	},
+)
