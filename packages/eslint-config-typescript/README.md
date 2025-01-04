@@ -8,7 +8,7 @@
 npm install -D eslint @birbhouse/eslint-config-typescript
 
 # Install peer dependencies for this configuration
-npm install -D eslint-plugin-import eslint-plugin-jsdoc typescript
+npm install -D eslint-plugin-import-x eslint-plugin-jsdoc typescript
 ```
 
 ### Yarn
@@ -17,5 +17,5 @@ npm install -D eslint-plugin-import eslint-plugin-jsdoc typescript
 yarn add -D eslint @birbhouse/eslint-config-typescript
 
 # Install peer dependencies for this configuration
-yarn add -D eslint-plugin-import eslint-plugin-jsdoc typescript
+yarn add -D eslint-plugin-import-x eslint-plugin-jsdoc typescript
 ```

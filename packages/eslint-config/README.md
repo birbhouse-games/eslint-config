@@ -8,7 +8,7 @@
 npm install -D eslint @birbhouse/eslint-config
 
 # Install peer dependencies for this configuration
-npm install -D eslint eslint-plugin-editorconfig eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-optimize-regex eslint-plugin-promise eslint-plugin-security eslint-plugin-sort-class-members eslint-plugin-unused-imports
+npm install -D eslint eslint-plugin-editorconfig eslint-plugin-import-x eslint-plugin-jsdoc eslint-plugin-optimize-regex eslint-plugin-promise eslint-plugin-security eslint-plugin-sort-class-members eslint-plugin-unused-imports
 ```
 
 ### Yarn
@@ -17,5 +17,5 @@ npm install -D eslint eslint-plugin-editorconfig eslint-plugin-import eslint-plu
 yarn add -D eslint @birbhouse/eslint-config
 
 # Install peer dependencies for this configuration
-yarn add -D eslint eslint-plugin-editorconfig eslint-plugin-import eslint-plugin-jsdoc eslint-plugin-optimize-regex eslint-plugin-promise eslint-plugin-security eslint-plugin-sort-class-members eslint-plugin-unused-imports
+yarn add -D eslint eslint-plugin-editorconfig eslint-plugin-import-x eslint-plugin-jsdoc eslint-plugin-optimize-regex eslint-plugin-promise eslint-plugin-security eslint-plugin-sort-class-members eslint-plugin-unused-imports
 ```

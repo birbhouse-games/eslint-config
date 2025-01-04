@@ -3,7 +3,7 @@
 // Module imports
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
-import * as pluginImport from 'eslint-plugin-import'
+import pluginImportX from 'eslint-plugin-import-x'
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginPreferFC from 'eslint-plugin-react-prefer-function-component/config'
 import pluginReact from 'eslint-plugin-react'
@@ -23,7 +23,7 @@ const compat = new FlatCompat()
 
 
 export default [
-	pluginImport.flatConfigs?.react,
+	pluginImportX.flatConfigs.react,
 	pluginJsxA11y.flatConfigs.recommended,
 	pluginPreferFC.configs?.recommended,
 	pluginReact.configs.flat?.recommended,

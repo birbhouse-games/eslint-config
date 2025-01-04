@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 // Module imports
-import * as pluginImport from 'eslint-plugin-import'
+import pluginImportX from 'eslint-plugin-import-x'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import tseslint from 'typescript-eslint'
 
@@ -11,8 +11,8 @@ import tseslint from 'typescript-eslint'
 
 export default [
 	...tseslint.configs.recommended,
+	pluginImportX.flatConfigs.typescript,
 	pluginJSDoc.configs['flat/recommended-typescript'],
-	pluginImport.flatConfigs?.typescript,
 
 	{
 		languageOptions: {
@@ -21,9 +21,6 @@ export default [
 		settings: {
 			jsdoc: {
 				mode: 'typescript',
-			},
-			'import/resolver': {
-				typescript: true,
 			},
 		},
 	},

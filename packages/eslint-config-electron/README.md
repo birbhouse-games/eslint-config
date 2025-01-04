@@ -8,7 +8,7 @@
 npm install -D eslint @birbhouse/eslint-config-electron
 
 # Install peer dependencies for this configuration
-npm install -D eslint-plugin-import
+npm install -D eslint-plugin-import-x
 ```
 
 ### Yarn
@@ -17,5 +17,5 @@ npm install -D eslint-plugin-import
 yarn add -D eslint @birbhouse/eslint-config-electron
 
 # Install peer dependencies for this configuration
-yarn add -D eslint-plugin-import
+yarn add -D eslint-plugin-import-x
 ```

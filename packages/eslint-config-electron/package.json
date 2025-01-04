@@ -24,11 +24,13 @@
     "eslint": "^9.17.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@types/eslint": "^9.6.1",
+    "eslint-plugin-import-x": "^4.6.1",
     "semantic-release": "^24.2.1",
     "semantic-release-monorepo": "^8.0.2"
   },
   "peerDependencies": {
-    "eslint-plugin-import": "^2.31.0"
+    "eslint-plugin-import-x": "^4.6.1"
   }
 }

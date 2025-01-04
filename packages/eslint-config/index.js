@@ -4,7 +4,7 @@
 import eslint from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
-import * as pluginImport from 'eslint-plugin-import'
+import pluginImportX from 'eslint-plugin-import-x'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import pluginPromise from 'eslint-plugin-promise'
 import pluginSecurity from 'eslint-plugin-security'
@@ -22,7 +22,7 @@ const compat = new FlatCompat()
 
 export default [
 	eslint.configs.recommended,
-	pluginImport.flatConfigs?.recommended,
+	pluginImportX.flatConfigs.recommended,
 	pluginJSDoc.configs['flat/recommended'],
 	pluginSecurity.configs.recommended,
 	pluginSortClassMembers.configs['flat/recommended'],
