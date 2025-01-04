@@ -1,43 +1,31 @@
 /* eslint-env node */
 
 // Module imports
+import eslint from '@eslint/js'
 import { FlatCompat } from '@eslint/eslintrc'
 import globals from 'globals'
-import js from '@eslint/js'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-import pluginImport from 'eslint-plugin-import'
+import * as pluginImport from 'eslint-plugin-import'
 import pluginJSDoc from 'eslint-plugin-jsdoc'
 import pluginPromise from 'eslint-plugin-promise'
 import pluginSecurity from 'eslint-plugin-security'
 import pluginSortClassMembers from 'eslint-plugin-sort-class-members'
-import tsESlint from 'typescript-eslint'
 
 
 
 
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const compat = new FlatCompat({
-	allConfig: js.configs.all,
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-})
+const compat = new FlatCompat()
 
 
 
 
 
-export default tsESlint.config(
-	...tsESlint.configs.recommended,
-	pluginJSDoc.configs['flat/recommended-typescript'],
+export default [
+	eslint.configs.recommended,
+	pluginImport.flatConfigs?.recommended,
+	pluginJSDoc.configs['flat/recommended'],
 	pluginSecurity.configs.recommended,
 	pluginSortClassMembers.configs['flat/recommended'],
-	pluginImport.flatConfigs.recommended,
-	pluginImport.flatConfigs.react,
-	pluginImport.flatConfigs.typescript,
 	pluginPromise.configs['flat/recommended'],
 
 	...compat.extends(
@@ -60,13 +48,16 @@ export default tsESlint.config(
 				...globals.es2021,
 				...globals.node,
 			},
-			parser: tsESlint.parser,
 			sourceType: 'module',
 		},
-		plugins: {
-			jsdoc: pluginJSDoc,
-			'@typescript-eslint': tsESlint.plugin,
+		settings: {
+			'import/resolver': {
+				node: true,
+			},
 		},
+	},
+
+	{
 		rules: {
 			// eslint
 			'array-bracket-spacing': ['error', 'never'],
@@ -225,14 +216,5 @@ export default tsESlint.config(
 			// security
 			'security/detect-object-injection': ['off'],
 		},
-		settings: {
-			jsdoc: {
-				mode: 'typescript',
-			},
-			'import/resolver': {
-				node: true,
-				typescript: true,
-			},
-		},
 	},
-)
+]
