@@ -20,6 +20,13 @@ jobs:
       packageName: '@birbhouse/eslint-config-electron'
     secrets: inherit
 
+  release-config-typescript:
+    name: Release @birbhouse/eslint-config-typescript
+    uses: ./.github/workflows/release-base.yml
+    with:
+      packageName: '@birbhouse/eslint-config-typescript'
+    secrets: inherit
+
   release-config-react:
     name: Release @birbhouse/eslint-config-react
     uses: ./.github/workflows/release-base.yml
