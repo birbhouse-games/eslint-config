@@ -22,7 +22,7 @@ const compat = new FlatCompat()
 
 
 
-export const react = [
+export default [
 	pluginImport.flatConfigs?.react,
 	pluginJsxA11y.flatConfigs.recommended,
 	pluginPreferFC.configs?.recommended,
