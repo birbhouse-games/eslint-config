@@ -3,7 +3,8 @@
   "workspaces": [
     "packages/eslint-config",
     "packages/eslint-config-electron",
-    "packages/eslint-config-react"
+    "packages/eslint-config-react",
+    "packages/eslint-config-typescript"
   ],
   "packageManager": "yarn@4.5.3"
 }
